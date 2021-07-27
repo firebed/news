@@ -1,0 +1,16 @@
+.btn-teal {
+    @include button-variant($teal-400, $teal-400);
+}
+
+.btn-green {
+    @include button-variant(#50b64a, #50b64a, white);
+    color: white !important;
+}
+
+.btn-white {
+    @include button-variant(white, #d5d5d5);
+}
+
+.btn-red {
+    @include button-variant(#be0000, #be0000);
+}

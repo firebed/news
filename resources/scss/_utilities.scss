@@ -1,0 +1,58 @@
+$utilities: (
+    "opacity": (
+        property: opacity,
+        values: (
+            0: 0,
+            25: .25,
+            50: .5,
+            75: .75,
+            100: 1,
+        )
+    ),
+);
+
+$utilities: map-merge(
+        $utilities,
+        (
+            "wpx": (
+                property: width,
+                class: wpx,
+                values: (
+                    1: 1rem,
+                    2: 2rem,
+                    3: 3rem,
+                    4: 4rem,
+                    5: 5rem,
+                    6: 6rem,
+                    7: 7rem,
+                    8: 8rem,
+                    9: 9rem,
+                    10: 10rem,
+                ),
+            )
+        )
+);
+
+
+.lc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.lc-2 {
+    -webkit-line-clamp: 2;
+}
+
+.lc-3 {
+    -webkit-line-clamp: 3;
+}
+
+.img-auto {
+    @extend .w-auto, .h-auto, .mh-100, .mw-100;
+}
+
+.img-middle {
+    @extend .w-auto, .h-auto, .mh-100, .mw-100, .start-50, .top-50, .translate-middle;
+}
