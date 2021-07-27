@@ -1,6 +1,6 @@
 {
-  "name": "firebed/bootstrap-components",
-  "description": "Boostrap components for laravel framework",
+  "name": "firebed/news",
+  "description": "News for news agencies using laravel framework",
   "license": "MIT",
   "authors": [
     {
