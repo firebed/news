@@ -1,8 +1,6 @@
-//$primary: #be0000;
-
-@import "utilities";
-@import "bootstrap";
-@import "colors";
+@import "../utilities";
+@import "~bootstrap/scss/bootstrap";
+@import "../colors";
 
 .text-shadow {
     text-shadow: 0 0 5px #000

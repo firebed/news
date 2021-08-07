@@ -21,11 +21,11 @@ class Login extends Model
 {
     use HasFactory;
 
-    protected array $fillable = ['user_id'];
+    protected $fillable = ['user_id'];
 
-    public bool $timestamps = false;
+    public $timestamps = false;
 
-    protected array $casts = [
+    protected $casts = [
         'created_at' => 'datetime'
     ];
 }

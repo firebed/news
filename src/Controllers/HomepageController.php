@@ -32,7 +32,7 @@ class HomepageController extends Controller
         $footer_types = $types->splice($types->count() - 4, 4);
         $footer_types->each(fn($t) => $t->articles->pop());
 
-        return view('user.homepage.index', [
+        return view('news::user.homepage.index', [
             'gallery_news'   => $this->getGalleryNews(),
             'greek_articles' => $types->shift(),
             'columns'        => $this->getColumns(),

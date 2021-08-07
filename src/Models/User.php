@@ -2,7 +2,6 @@
 
 namespace Firebed\News\Models;
 
-use App\Models\Login;
 use Firebed\News\Models\Gate\Traits\HasRoles;
 use Firebed\News\Models\Media\Traits\HasImages;
 use Illuminate\Database\Eloquent\Builder;
@@ -41,7 +40,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected array $fillable = [
+    protected $fillable = [
         'name',
         'email',
         'password',
@@ -52,7 +51,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected array $hidden = [
+    protected $hidden = [
         'password',
         'remember_token',
     ];
@@ -62,7 +61,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected array $casts = [
+    protected $casts = [
         'email_verified_at' => 'datetime',
     ];
 

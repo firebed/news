@@ -19,7 +19,7 @@ class Podcast extends Model
 {
     use HasFactory;
 
-    protected array $fillable = ['url'];
+    protected $fillable = ['url'];
 
     public function recordable(): MorphTo
     {
