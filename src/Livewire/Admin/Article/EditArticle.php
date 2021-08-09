@@ -44,7 +44,7 @@ class EditArticle extends Component
     {
         $images = $this->article->images('photos')->get();
 
-        return view('admin.articles.edit', compact('images'))
-            ->layout('admin.layouts.app', ['title' => 'Edit article']);
+        return view('news::dashboard.articles.edit', compact('images'))
+            ->layout('news::dashboard.layouts.app', ['title' => 'Edit article']);
     }
 }

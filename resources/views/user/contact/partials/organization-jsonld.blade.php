@@ -2,10 +2,10 @@
     {
 		"@context": "https://schema.org",
 		"@type": "Organization",
-		"name": "Millet Gazetesi",
+		"name": "{{ config('app.name') }}",
         "legalName" : "Millet Media O.E.",
-		"url": "https://www.milletagazetesi.gr",
-		"logo": "https://www.milletgazetesi.gr/storage/images/logo.png",
+		"url": "https://www.cinarfm.gr",
+		"logo": "https://www.cinarfm.gr/storage/images/logo.png",
 		"foundingDate": "2005",
 		"founders": [
             {
@@ -34,7 +34,7 @@
 			"@type": "ContactPoint",
 			"contactType": "Support",
 			"telephone": "[+30-25410-77968]",
-			"email": "info@milletgazetesi.gr"
+			"email": "info@cinarfm.gr"
 		}
 	}
 </script>

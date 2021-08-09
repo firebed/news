@@ -2,19 +2,17 @@
 
 namespace Firebed\News\Controllers\User;
 
+use Exception;
+use Firebed\News\Controllers\Controller;
 use Firebed\News\Events\ArticleViewed;
 use Firebed\News\Models\Article;
 use Firebed\News\Models\Tag;
 use Firebed\News\Models\Type;
-use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
-use Illuminate\Routing\Redirector;
 
 class ArticleController extends Controller
 {
@@ -33,7 +31,7 @@ class ArticleController extends Controller
             ->latest()
             ->paginate(16);
 
-        return view('user.articles.index', compact('type', 'articles'));
+        return $this->view('user.articles.index', compact('type', 'articles'));
     }
 
     public function show(Type $type, Article $article): Factory|View|Application
@@ -52,7 +50,7 @@ class ArticleController extends Controller
             }
         }
 
-        return view('user.articles.show', compact('type', 'article'));
+        return $this->view('user.articles.show', compact('type', 'article'));
     }
 
     public function search(Request $request): Renderable
@@ -63,7 +61,7 @@ class ArticleController extends Controller
             ->with('type', 'image')
             ->paginate(48);
 
-        return view('user.articles.search', compact('articles'));
+        return $this->view('user.articles.search', compact('articles'));
     }
 
     public function search_by_tag(Tag $tag): Renderable
@@ -74,7 +72,7 @@ class ArticleController extends Controller
             ->with('type', 'image')
             ->paginate(48);
 
-        return view('user.articles.search_by_tag', compact('tag', 'articles'));
+        return $this->view('user.articles.search_by_tag', compact('tag', 'articles'));
     }
 
     public function all_news(): Renderable
@@ -85,26 +83,6 @@ class ArticleController extends Controller
             ->with('type', 'image')
             ->paginate(48);
 
-        return view('user.articles.all-news', compact('articles'));
-    }
-
-    public function redirect(Request $request): RedirectResponse
-    {
-        $article = Article::findOrFail($request->input('id'));
-        return redirect()->route('user.articles.show', [$article->type->slug, $article->slug], 301);
-    }
-
-    public function image(Request $request): Redirector|Application|RedirectResponse
-    {
-        $id = $request->segment(3);
-        $filename = $request->segment(4);
-        return redirect('storage/images/articles/' . $id . '/' . $filename, 301);
-    }
-
-    public function thumbnail(Request $request): Redirector|Application|RedirectResponse
-    {
-        $id = $request->segment(3);
-        $filename = $request->segment(5);
-        return redirect('storage/images/articles/' . $id . '/' . $filename, 301);
+        return $this->view('user.articles.all-news', compact('articles'));
     }
 }

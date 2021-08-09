@@ -37,10 +37,10 @@ class ShowUsers extends Component
 
     public function render()
     {
-        return view('admin.users.index', [
+        return view('news::dashboard.users.index', [
             'users'         => $this->users,
             'user_statuses' => $this->user_statuses
         ])
-        ->layout('admin.layouts.app', ['title' => __('Users')]);
+        ->layout('news::dashboard.layouts.app', ['title' => __('Users')]);
     }
 }

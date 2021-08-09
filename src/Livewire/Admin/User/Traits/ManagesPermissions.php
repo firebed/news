@@ -4,7 +4,7 @@
 namespace Firebed\News\Livewire\Admin\User\Traits;
 
 
-use Firebed\News\Models\Gate\Role;
+use Firebed\Permission\Models\Role;
 use Illuminate\Database\Eloquent\Collection;
 
 trait ManagesPermissions
@@ -28,8 +28,8 @@ trait ManagesPermissions
         $this->user->syncRoles($this->selected_roles);
         $this->user->syncPermissions($this->selected_permissions);
 
-        if (user()->is($this->user)) {
-            user()->load('roles', 'permissions');
+        if (auth()->user()->is($this->user)) {
+            auth()->user()->load('roles', 'permissions');
             $this->emit('permissions-updated');
         }
     }

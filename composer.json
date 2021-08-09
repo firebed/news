@@ -13,7 +13,9 @@
     "intervention/image": "^2.5",
     "paquettg/php-html-parser": "^3.1",
     "firebed/permission": "dev-master",
-    "firebed/sitemap": "dev-master"
+    "firebed/sitemap": "dev-master",
+    "livewire/livewire": "^2.5",
+    "laravel/sanctum": "^2.11"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
@@ -28,11 +30,6 @@
     }
   },
   "extra": {
-    "laravel": {
-      "providers": [
-        "Firebed\\News\\NewsServiceProvider"
-      ]
-    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true

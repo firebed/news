@@ -10,11 +10,13 @@ use Illuminate\Database\Eloquent\Model;
  * Class Tag
  * @package App\Models
  *
+ * @property string slug
+ *
  * @mixin Builder
  */
 class Tag extends Model
 {
     use HasFactory;
 
-    public bool $timestamps = false;
+    public $timestamps = false;
 }

@@ -20,11 +20,7 @@ class CreateUser extends Component
         $this->user->active = TRUE;
     }
 
-    /**
-     * @return RedirectResponse
-     * @throws AuthorizationException
-     */
-    public function save(): RedirectResponse
+    public function save()
     {
         $this->authorize('Create user');
 
@@ -36,7 +32,7 @@ class CreateUser extends Component
 
     public function render()
     {
-        return view('admin.users.create')
-            ->layout('admin.layouts.app', ['title' => __("Create user")]);
+        return view('news::dashboard.users.create')
+            ->layout('news::dashboard.layouts.app', ['title' => __("Create user")]);
     }
 }

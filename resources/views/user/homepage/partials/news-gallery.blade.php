@@ -29,7 +29,7 @@
 
     <x-news::carousel.indicators class="mx-0" style="bottom: -19px">
         @foreach($gallery_news as $article)
-            <x-news::carousel.indicator class="pt-1 wpx-4 border-0" target="#gallery" slide="{{ $loop->index }}" :active="$loop->first" style="border-bottom: 7px solid #212529 !important; margin: 0 1px !important"/>
+            <x-news::carousel.indicator class="pt-1 w-4r border-0" target="#gallery" slide="{{ $loop->index }}" :active="$loop->first" style="border-bottom: 7px solid #212529 !important; margin: 0 1px !important"/>
         @endforeach
     </x-news::carousel.indicators>
 </x-news::carousel>

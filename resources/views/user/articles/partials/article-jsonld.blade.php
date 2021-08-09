@@ -17,7 +17,7 @@
             "url": "{{ asset('storage/images/logo.png') }}"
         }
     },
-    "url": "http://www.milletgazetesi.gr",
+    "url": "http://www.cinarfm.gr",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "{{ route('user.articles.show', [$article->type->slug, $article->slug]) }}"

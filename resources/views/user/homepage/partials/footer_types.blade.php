@@ -9,7 +9,7 @@
                     @if($type->articles->first()->image)
                         <img src="{{ $type->articles->first()->image->url('sm') }}" alt="{{ $type->articles->first()->title }}">
                     @else
-                        <x-image.16x9/>
+                        <x-news::image.16x9/>
                     @endif
                 </div>
             </a>

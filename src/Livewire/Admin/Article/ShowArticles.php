@@ -54,7 +54,7 @@ class ShowArticles extends Component
             ->orderBy($this->sortField, $this->sortDirection)
             ->simplePaginate();
 
-        return view('admin.articles.index', compact('types', 'articles'))
-            ->layout('admin.layouts.app', ['title' => __("All articles")]);
+        return view('news::dashboard.articles.index', compact('types', 'articles'))
+            ->layout('news::dashboard.layouts.app', ['title' => __("All articles")]);
     }
 }

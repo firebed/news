@@ -18,8 +18,8 @@
             <div class="card shadow-sm">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-4">
-                        <div class="h4">Millet Gazetesi</div>
-                        <img src="{{ asset('storage/images/logo.png') }}" alt="Millet gazetesi logo">
+                        <div class="h4">{{ config('app.name') }}</div>
+                        <img src="{{ asset('storage/images/logo.png') }}" alt="{{ config('app.name') }}">
                     </div>
                     <div class="table-responsive">
                         <table class="table table-sm mb-0">
@@ -45,7 +45,7 @@
                             </tr>
                             <tr>
                                 <td class="text-nowrap text-secondary">{{ __("Email") }} 1</td>
-                                <td>info@milletgazetesi.gr</td>
+                                <td>info@cinarfm.gr</td>
                             </tr>
                             <tr>
                                 <td class="text-nowrap text-secondary">{{ __("Email") }} 2</td>

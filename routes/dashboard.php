@@ -1,5 +1,6 @@
 <?php
 
+use Firebed\News\Controllers\Dashboard\ArticleController;
 use Firebed\News\Livewire\Admin\Article\CreateArticle;
 use Firebed\News\Livewire\Admin\Article\EditArticle;
 use Firebed\News\Livewire\Admin\Article\ShowArticles;
@@ -9,9 +10,11 @@ use Firebed\News\Livewire\Admin\User\ShowUsers;
 use Firebed\News\Models\Article;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth', 'active'])->group(function () {
+Route::middleware(['web', 'auth', 'active'])->group(function () {
     Route::prefix('admin')->as('admin.')->group(function () {
         Route::view('dashboard', 'admin.dashboard.index')->name('dashboard');
+
+//        Route::resource('articles', ArticleController::class);
 
         Route::get('articles', ShowArticles::class)->name('articles.index');
         Route::get('articles/{article}/edit', EditArticle::class)->name('articles.edit');

@@ -1,4 +1,4 @@
-@extends('layouts.master', ['title' => __("Login")])
+@extends('news::layouts.master', ['title' => __("Login")])
 
 @prepend('header_scripts')
     <meta name="robots" content="noindex, follow">

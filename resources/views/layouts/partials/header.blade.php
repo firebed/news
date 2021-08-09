@@ -1,20 +1,20 @@
-<div id="header" class="container-fluid d-none d-xl-block">
+<div id="header" class="container-fluid d-none d-xl-block bg-white">
     <div class="container">
         <div class="row py-2 justify-content-center justify-content-sm-start">
             <a href="{{ route('user.homepage') }}" class="col-8 col-xl-2 text-center text-sm-start">
-                <img src="{{ asset('/storage/images/desk_buyuk.png') }}" class="img-fluid" alt="Millet gazetesi logo" width="170" height="70">
+                <img src="{{ asset('/storage/images/logo.jpg') }}" class="img-fluid" alt="{{ config('app.name') }}" width="170" height="77">
             </a>
 
-            <div class="col d-flex justify-content-center align-items-center">
-                <div class="row align-items-center">
-                    <a href="https://cinarfm.gr/" class="col-auto" target="_blank">
-                        <img src="https://cinarfm.gr/images/logo.jpg" alt="" width="100" height="45">
-                    </a>
+{{--            <div class="col d-flex justify-content-center align-items-center">--}}
+{{--                <div class="row align-items-center">--}}
+{{--                    <a href="https://cinarfm.gr/" class="col-auto" target="_blank">--}}
+{{--                        <img src="https://cinarfm.gr/images/logo.jpg" alt="" width="100" height="45">--}}
+{{--                    </a>--}}
 
-                    @include('news::layouts.partials.weather-forecast')
-                    @include('news::layouts.partials.prayer')
-                </div>
-            </div>
+{{--                    @include('news::layouts.partials.weather-forecast')--}}
+{{--                    @include('news::layouts.partials.prayer')--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
             <div class="col-auto d-flex justify-content-end align-items-center" style="width: 205px !important">
                 <div class="addthis_horizontal_follow_toolbox"></div>
@@ -25,7 +25,7 @@
 
 <x-news::navbar class="bg-red-600 py-0 py-lg-1" theme="dark" expand="xl">
     <x-news::navbar.brand class="d-flex py-2 flex-column d-xl-none" href="{{ route('user.homepage') }}">
-        <img src="{{ asset('storage/images/mobile.png') }}" class="img-fluid float-start" alt="Millet gazetesi logo" width="120" height="46">
+        <img src="{{ asset('storage/images/logo.jpg') }}" class="img-fluid float-start" alt="{{ config('app.name') }}" width="120" height="46">
     </x-news::navbar.brand>
 
     <x-news::navbar.toggler target="main-navigation"/>
@@ -69,24 +69,24 @@
             <x-news::navbar.dropdown class="text-light" id="account" label="{{ __('Account') }}">
                 <x-news::dropdown.menu class="mt-1 bg-red-600" theme="dark" aria="account">
                     @guest
-{{--                        <x-news::dropdown.item href="{{ route('login') }}">{{ __('Login') }}</x-news::dropdown.item>--}}
+                        <x-news::dropdown.item href="{{ route('login') }}">{{ __('Login') }}</x-news::dropdown.item>
                     @else
                         @can('View dashboard')
-                            <x-news::dropdown.item target="__blank" href="{{ route('admin.dashboard') }}"><em class="fa small fa-tachometer-alt wpx-2"></em>{{ __('Dashboard') }}</x-news::dropdown.item>
+                            <x-news::dropdown.item target="__blank" href="{{ route('admin.dashboard') }}"><em class="fa small fa-tachometer-alt w-2r"></em>{{ __('Dashboard') }}</x-news::dropdown.item>
                             <x-news::dropdown.divider/>
                         @endcan
                         @can('View articles')
-                            <x-news::dropdown.item target="__blank" href="{{ route('admin.articles.index') }}"><em class="fa small fa-align-left wpx-2"></em>{{ __('All articles') }}</x-news::dropdown.item>
+                            <x-news::dropdown.item target="__blank" href="{{ route('admin.articles.index') }}"><em class="fa small fa-align-left w-2r"></em>{{ __('All articles') }}</x-news::dropdown.item>
                         @endcan
                         @can('Create article')
-                            <x-news::dropdown.item target="__blank" href="{{ route('admin.articles.create') }}"><em class="fa small fa-plus wpx-2"></em>{{ __('Add article') }}</x-news::dropdown.item>
+                            <x-news::dropdown.item target="__blank" href="{{ route('admin.articles.create') }}"><em class="fa small fa-plus w-2r"></em>{{ __('Add article') }}</x-news::dropdown.item>
                             <x-news::dropdown.divider/>
                         @endcan
                         <x-news::dropdown.item class="px-0">
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <button type="submit" class="btn text-start px-3 py-0 text-decoration-none nav-link w-100">
-                                    <em class="fa small fa-sign-out-alt wpx-2"></em>{{ __('Logout') }}
+                                    <em class="fa small fa-sign-out-alt w-2r"></em>{{ __('Logout') }}
                                 </button>
                             </form>
                         </x-news::dropdown.item>

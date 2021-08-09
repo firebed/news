@@ -34,7 +34,7 @@ class CreateArticle extends Component
     {
         $this->authorize('Create article');
 
-        $this->article->user()->associate(user());
+        $this->article->user()->associate(auth()->user());
         $this->article->visible = FALSE;
         $this->validate();
         $this->saveArticle();
@@ -49,7 +49,7 @@ class CreateArticle extends Component
 
     public function render()
     {
-        return view('admin.articles.create')
-            ->layout('admin.layouts.app', ['title' => 'Create article']);
+        return view('news::dashboard.articles.create')
+            ->layout('news::dashboard.layouts.app', ['title' => 'Create article']);
     }
 }

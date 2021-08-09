@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    @include('news::user.adv.slot-2')
+{{--    @include('news::user.adv.slot-2')--}}
 
     <div class="container-fluid px-0 py-3 bg-white">
         <div class="container">

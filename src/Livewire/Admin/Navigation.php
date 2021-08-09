@@ -7,10 +7,10 @@ use Livewire\Component;
 
 class Navigation extends Component
 {
-    protected array $listeners = ['permissions-updated' => '$refresh'];
+    protected $listeners = ['permissions-updated' => '$refresh'];
 
     public function render(): Renderable
     {
-        return view('admin.layouts.partials.navigation');
+        return view('news::dashboard.layouts.partials.navigation');
     }
 }

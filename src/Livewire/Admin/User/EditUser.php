@@ -32,7 +32,7 @@ class EditUser extends Component
 
     public function render()
     {
-        return view('admin.users.edit')
-            ->layout('admin.layouts.app', ['title' => __("Edit user")]);
+        return view('news::dashboard.users.edit')
+            ->layout('news::dashboard.layouts.app', ['title' => __("Edit user")]);
     }
 }
