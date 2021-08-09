@@ -32,7 +32,7 @@ class ContactController extends Controller
 
         try {
             Mail::raw($request->message, function (Message $message) use ($request) {
-                $message->to('gazetemillet@hotmail.com')
+                $message->to('cinarfm91.8@gmail.com')
                     ->bcc($request->email)
                     ->subject($request->subject);
             });

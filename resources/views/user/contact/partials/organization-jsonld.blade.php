@@ -3,9 +3,9 @@
 		"@context": "https://schema.org",
 		"@type": "Organization",
 		"name": "{{ config('app.name') }}",
-        "legalName" : "Millet Media O.E.",
+        "legalName" : "{{ config('app.name') }}",
 		"url": "https://www.cinarfm.gr",
-		"logo": "https://www.cinarfm.gr/storage/images/logo.png",
+		"logo": "https://www.cinarfm.gr/storage/images/logo.jpg",
 		"foundingDate": "2005",
 		"founders": [
             {
@@ -18,23 +18,21 @@
             }
         ],
 		"sameAs":[
-			"https://www.facebook.com/milletmedia",
-			"https://twitter.com/milletmedia",
-			"https://www.instagram.com/milletworld",
-			"https://www.youtube.com/channel/UCPER2qX7mpzssx2X8AviYFw",
-			"https://telegram.me/milletgazetesi"
+			"https://www.facebook.com/www.cinarfm.gr",
+			"https://twitter.com/cinarfm",
+			"https://www.youtube.com/channel/UCvDTv3mcC4oY9ZWZOtJIQpA",
 		],
 		"address": {
 			"@type": "PostalAddress",
-			"addressLocality": "Xanthi",
-			"postalCode": "67100",
-			"streetAddress": "Miaouli 7-9"
+			"addressLocality": "Komotini",
+			"postalCode": "69100",
+			"streetAddress": "A. Manesi 5"
 		},
 		"contactPoint": {
 			"@type": "ContactPoint",
 			"contactType": "Support",
-			"telephone": "[+30-25410-77968]",
-			"email": "info@cinarfm.gr"
+			"telephone": "[+30-25310-26001]",
+			"email": "cinarfm91.8@gmail.com"
 		}
 	}
 </script>

@@ -25,31 +25,19 @@
                         <table class="table table-sm mb-0">
                             <tr>
                                 <td class="text-nowrap text-secondary">{{ __("Legal name") }}</td>
-                                <td>Millet Media O.E.</td>
+                                <td>{{ config('app.name') }}</td>
                             </tr>
                             <tr>
                                 <td class="text-nowrap text-secondary">{{ __("Address") }}</td>
-                                <td>Miaouli 7-9, Xanthi 67100, Greece</td>
+                                <td>A. Manesi 5, Komotini 69100, Greece</td>
                             </tr>
                             <tr>
                                 <td class="text-nowrap text-secondary">{{ __("Phone") }} 1</td>
-                                <td>+30 25410 77968</td>
-                            </tr>
-                            <tr>
-                                <td class="text-nowrap text-secondary">{{ __("Phone") }} 2</td>
-                                <td>+30 6932216572</td>
-                            </tr>
-                            <tr>
-                                <td class="text-nowrap text-secondary">{{ __("Phone") }} 3</td>
-                                <td>+30 6972227650</td>
+                                <td>+30 25310 26001</td>
                             </tr>
                             <tr>
                                 <td class="text-nowrap text-secondary">{{ __("Email") }} 1</td>
-                                <td>info@cinarfm.gr</td>
-                            </tr>
-                            <tr>
-                                <td class="text-nowrap text-secondary">{{ __("Email") }} 2</td>
-                                <td>gazetemillet@hotmail.com</td>
+                                <td>cinarfm91.8@gmail.com</td>
                             </tr>
                         </table>
                     </div>
