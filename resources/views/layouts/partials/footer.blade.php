@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row g-4">
             <div class="col-12 col-sm-auto text-light">
-                <img src="{{ asset('storage/images/mobile.png') }}" alt="{{ config('app.name') }}" width="120" height="46">
+                <img src="{{ asset('storage/images/logo.jpg') }}" alt="{{ config('app.name') }}" width="135" height="61">
                 <div class="small text-gray-500 mt-3">&copy; {{ now()->year }} {{ config('app.name') }}</div>
             </div>
             <div class="col-12 col-sm-auto d-flex flex-column text-light">
