@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+namespace Firebed\News\View\Components;
 
 use Firebed\News\Models\Article;
 use Illuminate\Contracts\Support\Renderable;
@@ -36,6 +36,6 @@ class SimilarNews extends Component
      */
     public function render(): Renderable
     {
-        return view('user.articles.components.similar-news');
+        return view('news::user.articles.components.similar-news');
     }
 }

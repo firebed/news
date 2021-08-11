@@ -33,7 +33,7 @@ class AuthorController extends Controller
         // Collect all articles and eagerly load the images
         Collection::make($authors->pluck('articles')->flatten())->load('image');
 
-        return view('user.authors.index', compact('type', 'authors'));
+        return view('news::user.authors.index', compact('type', 'authors'));
     }
 
     /**
@@ -59,6 +59,6 @@ class AuthorController extends Controller
             ->paginate(16);
 
 
-        return view('user.authors.show', compact('author', 'articles'));
+        return view('news::user.authors.show', compact('author', 'articles'));
     }
 }

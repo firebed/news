@@ -1,4 +1,4 @@
-@extends('layouts.master', ['title' => __($type->name)])
+@extends('news::layouts.master', ['title' => __($type->name)])
 
 @push('meta')
     <meta name="description" content="{{ __("descriptions.$type->name") }}">
@@ -27,7 +27,7 @@
 
 @section('main')
 
-{{--    @include('user.adv.slot-1')--}}
+{{--    @include('news::user.adv.slot-1')--}}
 
     <div class="container-fluid py-4">
         <div class="container">
@@ -69,11 +69,11 @@
 
             @if($articles->hasPages())
                 <div class="d-flex justify-content-end align-items-center mt-3">
-                    {{ $articles->links('components.paginator') }}
+                    {{ $articles->links('news::components.paginator') }}
                 </div>
             @endif
         </div>
     </div>
 
-{{--    @include('user::user.adv.slot-2')--}}
+{{--    @include('news::user.adv.slot-2')--}}
 @endsection

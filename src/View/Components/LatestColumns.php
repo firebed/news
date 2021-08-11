@@ -46,6 +46,6 @@ class LatestColumns extends Component
      */
     public function render(): Renderable
     {
-        return view('user.articles.components.latest-columns');
+        return view('news::user.articles.components.latest-columns');
     }
 }

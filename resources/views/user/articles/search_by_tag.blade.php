@@ -1,4 +1,4 @@
-@extends('layouts.master', ['title' => __("Search")])
+@extends('news::layouts.master', ['title' => __("Search")])
 
 @push('meta')
     <link rel="canonical" href="{{ route('user.articles.search_by_tag', $tag->slug) }}">
@@ -10,7 +10,7 @@
 
 @section('main')
 
-    @include('user.adv.slot-1')
+    @include('news::user.adv.slot-1')
 
     <div class="container-fluid py-4">
         <div class="container">
@@ -27,13 +27,13 @@
                                         @if($article->image)
                                             <img src="{{ $article->image->url('sm') }}" alt="{{ $article->title }}" class="rounded-top">
                                         @else
-                                            <x-image.16x9/>
+                                            <x-news::image.16x9/>
                                         @endif
                                     </div>
                                 </a>
 
                                 <div class="card-body d-flex flex-column">
-                                    @include('user.articles.partials.badge', compact('article'))
+                                    @include('news::user.articles.partials.badge', compact('article'))
                                     <p class="card-text">
                                         <a href="{{ route('user.articles.show', [$article->type->slug, $article->slug]) }}" class="text-decoration-none text-dark">
                                             {{ $article->title }}
@@ -60,12 +60,12 @@
 
             @if($articles->hasPages())
                 <div class="d-flex justify-content-end align-items-center mt-3">
-                    {{ $articles->links('components.paginator') }}
+                    {{ $articles->links('news::components.paginator') }}
                 </div>
             @endif
         </div>
     </div>
 
-    @include('user.adv.slot-2')
+    @include('news::user.adv.slot-2')
 
 @endsection

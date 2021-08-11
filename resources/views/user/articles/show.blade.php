@@ -1,17 +1,17 @@
-@extends('layouts.master', ['title' => $article->title, 'bg' => 'bg-white'])
+@extends('news::layouts.master', ['title' => $article->title, 'bg' => 'bg-white'])
 
 @push('meta')
     <link rel="canonical" href="{{ route('user.articles.show', [$article->type->slug, $article->slug]) }}">
 
     <meta name="description" content="{{ $article->description }}">
 
-    <x-facebook.article
+    <x-news::facebook.article
         :url="route('user.articles.show', [$article->type->slug, $article->slug])"
         :title="$article->title"
         :description="$article->description"
         :image="$article->cover_photo"/>
 
-    <x-twitter.card
+    <x-news::twitter.card
         :title="$article->title"
         :description="$article->description"
         :image="$article->cover_photo"/>
@@ -20,8 +20,8 @@
 @push('header_scripts')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
 
-    @include('user.articles.partials.breadcrumb-jsonld')
-    @include('user.articles.partials.article-jsonld')
+    @include('news::user.articles.partials.breadcrumb-jsonld')
+    @include('news::user.articles.partials.article-jsonld')
 @endpush
 
 @push('footer_scripts')
@@ -35,11 +35,11 @@
     <div class="container-fluid px-0 py-4 bg-white">
         <div class="container">
 
-            <x-breadcrumb>
-                <x-breadcrumb.item><a href="{{ route('user.homepage')  }}">{{ __("Homepage") }}</a></x-breadcrumb.item>
-                <x-breadcrumb.item><a href="{{ route('user.articles.index', $type->slug) }}">{{ $type->name }}</a></x-breadcrumb.item>
-                <x-breadcrumb.item class="d-none d-md-inline-block" active>{{ $article->title }}</x-breadcrumb.item>
-            </x-breadcrumb>
+            <x-news::breadcrumb>
+                <x-news::breadcrumb.item><a href="{{ route('user.homepage')  }}">{{ __("Homepage") }}</a></x-news::breadcrumb.item>
+                <x-news::breadcrumb.item><a href="{{ route('user.articles.index', $type->slug) }}">{{ $type->name }}</a></x-news::breadcrumb.item>
+                <x-news::breadcrumb.item class="d-none d-md-inline-block" active>{{ $article->title }}</x-news::breadcrumb.item>
+            </x-news::breadcrumb>
 
             <main class="row g-4">
                 <div class="col-12 col-xl-8">
@@ -77,10 +77,10 @@
                         <div class="d-block text-wrap">
                             {!! $article->content !!}
                         </div>
-                        @includeWhen($article->show_images && $article->photos->isNotEmpty(), 'user.articles.partials.article-photos')
+                        @includeWhen($article->show_images && $article->photos->isNotEmpty(), 'news::user.articles.partials.article-photos')
                     </article>
 
-                    <x-similar-news :except="$article"/>
+                    <x-news-similar-news :except="$article"/>
 
                     <div class="mt-3">
                         <div class="d-flex flex-row flex-wrap">
@@ -97,18 +97,18 @@
                     <div class="row gy-4 row-cols-1 align-items-start">
 
                         @can('Update article')
-                            @include('user.articles.partials.article-info')
+                            @include('news::user.articles.partials.article-info')
                         @endcan
 
-                        @include('user.adv.slot-4')
+                        @include('news::user.adv.slot-4')
 
-                        @includeWhen($article->type->isColumn(), 'user.articles.partials.author-info')
+                        @includeWhen($article->type->isColumn(), 'news::user.articles.partials.author-info')
 
                         <div class="col">
-                            <x-latest-news :except="$article"/>
+                            <x-news-latest-news :except="$article"/>
                         </div>
 
-                        @include('user.adv.slot-3')
+                        @include('news::user.adv.slot-3')
                     </div>
                 </div>
             </main>

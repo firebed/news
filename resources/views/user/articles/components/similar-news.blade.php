@@ -15,7 +15,7 @@
                             @if($article->image)
                                 <img src="{{ $article->image->url('md') }}" alt="{{ $article->title }}" class="rounded-top">
                             @else
-                                <x-image.16x9/>
+                                <x-news::image.16x9/>
                             @endif
                         </a>
                         <div class="card-body">

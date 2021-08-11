@@ -7,7 +7,7 @@
             @if($first->author->cover_photo)
                 <img src="{{ $first->author->cover_photo->url('md') }}" alt="{{ $first->title }}">
             @else
-                <x-image.16x9/>
+                <x-news::image.16x9/>
             @endif
         </a>
         <div class="card-body">

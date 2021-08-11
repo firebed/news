@@ -1,4 +1,4 @@
-@extends('layouts.master', ['title' => __("Authors")])
+@extends('news::layouts.master', ['title' => __("Authors")])
 
 @push('meta')
     <meta name="description" content="{{ __("descriptions.authors") }}">
@@ -7,15 +7,15 @@
 
 @section('main')
 
-    @include('user.adv.slot-1')
+    @include('news::user.adv.slot-1')
 
     <div class="container-fluid py-4">
         <div class="container">
 
-            <x-breadcrumb>
-                <x-breadcrumb.item><a href="{{ route('user.homepage')  }}">{{ __("Homepage") }}</a></x-breadcrumb.item>
-                <x-breadcrumb.item active>{{ __("Authors") }}</x-breadcrumb.item>
-            </x-breadcrumb>
+            <x-news::breadcrumb>
+                <x-news::breadcrumb.item><a href="{{ route('user.homepage')  }}">{{ __("Homepage") }}</a></x-news::breadcrumb.item>
+                <x-news::breadcrumb.item active>{{ __("Authors") }}</x-news::breadcrumb.item>
+            </x-news::breadcrumb>
 
             <h1 class="fs-2 mb-3">
                 <span class="d-inline-block w-auto border-bottom border-danger border-4 pb-2">{{ __("Authors") }}</span>

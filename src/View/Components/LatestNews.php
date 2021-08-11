@@ -38,6 +38,6 @@ class LatestNews extends Component
      */
     public function render(): Renderable
     {
-        return view('user.articles.components.latest-news');
+        return view('news::user.articles.components.latest-news');
     }
 }
