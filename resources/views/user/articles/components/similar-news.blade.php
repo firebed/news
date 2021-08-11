@@ -19,7 +19,7 @@
                             @endif
                         </a>
                         <div class="card-body">
-                            @include('user.articles.partials.badge', compact('article'))
+                            @include('news::user.articles.partials.badge', compact('article'))
                             <p><a href="{{ route('user.articles.show', [$article->type->slug, $article->slug])}}" class="text-dark text-decoration-none">{{ $article->title }}</a></p>
                             <div class="small text-secondary">{{ $article->created_at->isoFormat('D MMMM YYYY') }}</div>
                         </div>
