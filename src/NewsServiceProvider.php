@@ -100,8 +100,8 @@ class NewsServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../resources/views/user' => resource_path('views/vendor/news/auth'),
-                __DIR__ . '/../resources/views/user' => resource_path('views/vendor/news/layouts'),
+                __DIR__ . '/../resources/views/auth' => resource_path('views/vendor/news/auth'),
+                __DIR__ . '/../resources/views/layouts' => resource_path('views/vendor/news/layouts'),
                 __DIR__ . '/../resources/views/user' => resource_path('views/vendor/news/user'),
             ], 'user-views');
 

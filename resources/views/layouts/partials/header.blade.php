@@ -23,7 +23,7 @@
     </div>
 </div>
 
-<x-news::navbar class="bg-dark py-0 py-lg-1" theme="dark" expand="xl">
+<x-news::navbar class="bg-primary py-0 py-lg-1" theme="dark" expand="xl">
     <x-news::navbar.brand class="d-flex py-2 flex-column d-xl-none" href="{{ route('user.homepage') }}">
         <img src="{{ asset('storage/images/logo.jpg') }}" class="img-fluid float-start" alt="{{ config('app.name') }}" width="120" height="46">
     </x-news::navbar.brand>
@@ -34,7 +34,7 @@
         <x-news::navbar.nav class="me-auto">
             <x-news::navbar.link class="ps-0 text-light" href="{{ route('user.homepage') }}"><em class="fa fa-home d-none d-xl-inline-block"></em><span class="d-xl-none">{{ __('Homepage') }}</span></x-news::navbar.link>
             <x-news::navbar.dropdown class="text-light" id="news" label="{{ __('News') }}">
-                <x-news::dropdown.menu class="mt-1 bg-dark" theme="dark" aria="news">
+                <x-news::dropdown.menu class="mt-1 bg-primary" theme="dark" aria="news">
                     <x-news::dropdown.item href="{{ route('user.articles.all_news') }}">{{ __('All news') }}</x-news::dropdown.item>
                     <x-news::dropdown.item href="{{ route('user.articles.index', 'bati-trakya') }}">{{ __('Western Thrace') }}</x-news::dropdown.item>
                     <x-news::dropdown.item href="{{ route('user.articles.index', 'yunanistan') }}">{{ __('Greece') }}</x-news::dropdown.item>
@@ -53,7 +53,7 @@
             <x-news::navbar.link class="text-light" href="{{ route('user.contact.index') }}">{{ __("Contact") }}</x-news::navbar.link>
 
             <x-news::navbar.dropdown class="text-light" id="other" label="{{ __('Other') }}">
-                <x-news::dropdown.menu class="mt-1 bg-dark" theme="dark" aria="other">
+                <x-news::dropdown.menu class="mt-1 bg-primary" theme="dark" aria="other">
                     <x-news::dropdown.item href="{{ route('user.articles.index', 'kose-yazilari') }}">{{ __('Columns') }}</x-news::dropdown.item>
                     <x-news::dropdown.item href="{{ route('user.articles.index', 'kultur-sanat') }}">{{ __('Art and Culture') }}</x-news::dropdown.item>
                     <x-news::dropdown.item href="{{ route('user.articles.index', 'tarih') }}">{{ __('History') }}</x-news::dropdown.item>
@@ -67,7 +67,7 @@
             </x-news::navbar.dropdown>
 
             <x-news::navbar.dropdown class="text-light" id="account" label="{{ __('Account') }}">
-                <x-news::dropdown.menu class="mt-1 bg-dark" theme="dark" aria="account">
+                <x-news::dropdown.menu class="mt-1 bg-primary" theme="dark" aria="account">
                     @guest
                         <x-news::dropdown.item href="{{ route('login') }}">{{ __('Login') }}</x-news::dropdown.item>
                     @else
