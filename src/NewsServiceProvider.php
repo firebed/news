@@ -18,7 +18,6 @@ use Firebed\News\View\Components\LatestColumns;
 use Firebed\News\View\Components\LatestNews;
 use Firebed\News\View\Components\SimilarNews;
 use Illuminate\Database\Eloquent\Relations\Relation;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 
@@ -44,6 +43,11 @@ class NewsServiceProvider extends ServiceProvider
         Livewire::component('show-users', ShowUsers::class);
         Livewire::component('edit-user', EditUser::class);
         Livewire::component('create-user', CreateUser::class);
+    }
+
+    public function register(): void
+    {
+        $this->app->register(EventServiceProvider::class);
     }
 
     private function registerConfig(): void
