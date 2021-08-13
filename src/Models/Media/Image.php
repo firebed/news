@@ -37,10 +37,19 @@ class Image extends Model
     public function url($conversion = null): string
     {
         $src = $this->src;
+        if ($this->isAbsolute()) {
+            return $src;
+        }
+
         if ($conversion !== NULL && $this->hasConversion($conversion)) {
             $src = $this->conversion($conversion)['src'];
         }
         return Storage::disk($this->disk)->url($src);
+    }
+
+    private function isAbsolute(): bool
+    {
+        return str_contains($this->src, '://');
     }
 
     public function conversion($name)
@@ -56,6 +65,10 @@ class Image extends Model
     protected static function booted(): void
     {
         static::deleted(function (Image $image) {
+            if ($image->isAbsolute()) {
+                return;
+            }
+
             if (!method_exists($image, 'isForceDeleting') || $image->isForceDeleting()) {
                 Storage::disk($image->disk)->delete($image->src);
 

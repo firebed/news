@@ -2,7 +2,7 @@
     <div class="card shadow-sm">
         <div class="card-body d-flex">
             @if($article->author->image)
-                <x-avatar url="{{ $article->author->image->url() }}"/>
+                <x-news::avatar url="{{ $article->author->image->url() }}"/>
             @endif
             <div class="d-flex flex-column ms-3">
                 <strong>{{ $article->author->full_name }}</strong>
@@ -14,5 +14,5 @@
 </div>
 
 <div class="col">
-    <x-latest-columns :except="$article" take="5"/>
+    <x-news-latest-columns :except="$article" take="5"/>
 </div>

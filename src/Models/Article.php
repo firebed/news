@@ -41,6 +41,8 @@ class Article extends Model
 {
     use HasFactory, HasImages, FullTextIndex;
 
+    protected $fillable = ['title', 'author_id', 'type_id', 'slug', 'description', 'content', 'visible', 'show_images'];
+
     protected array $match = ['title', 'content'];
 
     protected string $disk        = 'articles';
@@ -98,12 +100,6 @@ class Article extends Model
         $this->fitOrResize($image, 856, 481);
     }
 
-    public function registerImageConversions(): void
-    {
-        $this->addImageConversion('sm', fn(Image $image) => $this->fitOrResize($image, 245, 138));
-        $this->addImageConversion('md', fn(Image $image) => $this->fitOrResize($image, 416, 234));
-    }
-
     private function fitOrResize($image, $width, $height): void
     {
         $aspectRatio = $image->width() / $image->height();
@@ -118,5 +114,11 @@ class Article extends Model
                 $constraint->upsize();
             });
         }
+    }
+
+    public function registerImageConversions(): void
+    {
+        $this->addImageConversion('sm', fn(Image $image) => $this->fitOrResize($image, 245, 138));
+        $this->addImageConversion('md', fn(Image $image) => $this->fitOrResize($image, 416, 234));
     }
 }

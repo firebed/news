@@ -16,7 +16,7 @@ class CreateImagesTable extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->morphs('imageable');
-            $table->string('disk');
+            $table->string('disk')->nullable();
             $table->string('collection')->nullable();
             $table->string('src');
             $table->unsignedInteger('width')->nullable();
