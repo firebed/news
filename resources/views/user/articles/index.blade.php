@@ -38,7 +38,7 @@
             </x-news::breadcrumb>
 
             <h1 class="fs-2 mb-3">
-                <span class="d-inline-block w-auto border-bottom border-danger border-4 pb-2">{{ __($type->name) }}</span>
+                <span class="d-inline-block w-auto border-bottom border-primary border-4 pb-2">{{ __($type->name) }}</span>
             </h1>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
                 @foreach($articles as $article)

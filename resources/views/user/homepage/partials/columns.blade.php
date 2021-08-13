@@ -1,4 +1,4 @@
-<h5 class="mb-2 fw-bold pb-1 border-bottom border-danger border-3"><a href="{{ route('user.articles.index', 'kose-yazilari') }}" class="text-dark text-decoration-none">{{ to_upper(__("Columns")) }}</a></h5>
+<h5 class="mb-2 fw-bold pb-1 border-bottom border-primary border-3"><a href="{{ route('user.articles.index', 'kose-yazilari') }}" class="text-dark text-decoration-none">{{ to_upper(__("Columns")) }}</a></h5>
 
 {{-- For small devices and up --}}
 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3 d-none d-sm-flex">
@@ -55,4 +55,4 @@
     <x-news::carousel.controls target="#columns"/>
 </x-news::carousel>
 
-<div class="mt-2 fw-bold pb-1 border-bottom border-danger border-3"></div>
+<div class="mt-2 fw-bold pb-1 border-bottom border-primary border-3"></div>

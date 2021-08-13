@@ -1,5 +1,5 @@
 <div>
-    <h5 class="fw-bold fs-4 mb-4 border-start border-4 ps-2 border-danger">
+    <h5 class="fw-bold fs-4 mb-4 border-start border-4 ps-2 border-primary">
         <a href="{{ isset($greek_articles) ? route('user.articles.index', $greek_articles->slug) : '#' }}" class="text-decoration-none">ΕΙΔΗΣΕΙΣ - ΆΡΘΡΑ</a>
     </h5>
 

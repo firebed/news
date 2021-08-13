@@ -11,7 +11,7 @@
     <div class="container-fluid py-4">
         <div class="container">
             <h1 class="fs-2 mb-3">
-                <span class="d-inline-block w-auto border-bottom border-danger border-4 pb-2">{{ __("Search results") }}</span>
+                <span class="d-inline-block w-auto border-bottom border-primary border-4 pb-2">{{ __("Search results") }}</span>
             </h1>
             @if($articles->isNotEmpty())
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">

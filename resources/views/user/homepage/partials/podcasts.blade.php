@@ -1,4 +1,4 @@
-<h5 class="mb-2 fw-bold pb-1 border-bottom border-danger border-3">{{ __("Podcast") }}</h5>
+<h5 class="mb-2 fw-bold pb-1 border-bottom border-primary border-3">{{ __("Podcast") }}</h5>
 
 @if($podcasts->isNotEmpty())
     <div class="d-flex flex-column" style="gap: 2.2rem">

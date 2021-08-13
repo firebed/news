@@ -19,7 +19,7 @@
             </x-breadcrumb>
 
             <h1 class="fs-2 mb-2">
-                <span class="d-inline-block w-auto border-bottom border-danger border-4 pb-2">{{ $author->full_name }}</span>
+                <span class="d-inline-block w-auto border-bottom border-primary border-4 pb-2">{{ $author->full_name }}</span>
             </h1>
             <div class="text-secondary mb-3">
                 <span>{{ $author->email }}</span>
