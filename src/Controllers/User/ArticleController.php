@@ -45,7 +45,7 @@ class ArticleController extends Controller
         foreach ($article->tags as $tag) {
             $regex = "/(" . str_replace('/', '\\/', addslashes($tag->name)) . "(?!([^<]+)?>))/i";
             try {
-                $article->content = preg_replace($regex, '<a class="text-decoration-none" href="' . route('user.articles.search_by_tag', $tag->slug) . '">$1</a>', $article->content);
+                $article->content = preg_replace($regex, '<a class="text-blue-500 text-decoration-none" href="' . route('user.articles.search_by_tag', $tag->slug) . '">$1</a>', $article->content);
             } catch (Exception) {
             }
         }
