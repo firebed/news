@@ -1,4 +1,4 @@
-@extends('layouts.master', ['title' => __("Contact")])
+@extends('news::layouts.master', ['title' => __("Contact")])
 
 @push('meta')
     <meta name="description" content="{{ __("descriptions.contact") }}">
@@ -6,7 +6,7 @@
 @endpush
 
 @push('header_scripts')
-    @include('user.contact.partials.organization-jsonld')
+    @include('news::user.contact.partials.organization-jsonld')
 @endpush
 
 @section('main')
