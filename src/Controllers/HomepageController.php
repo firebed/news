@@ -33,7 +33,7 @@ class HomepageController extends Controller
         $footer_types->each(fn($t) => $t->articles->pop()); # Remove last item of each type
 
         $podcasts = $this->getPodcasts();
-        $podcasts->pop();
+//        $podcasts->pop();
         return view('news::user.homepage.index', [
             'gallery_news'   => $this->getGalleryNews(),
             'greek_articles' => $types->shift(),
