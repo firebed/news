@@ -14,7 +14,7 @@ class ContactController extends Controller
 {
     public function index(): Renderable
     {
-        return view('user.contact.index');
+        return view('news::user.contact.index');
     }
 
     public function store(Request $request): RedirectResponse
